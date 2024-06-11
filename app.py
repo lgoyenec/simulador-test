@@ -20,7 +20,7 @@ general_info_file = 'municipality_cards_v2.csv'
 age_distribution_file = 'municipality_cards_v3.csv'
 
 # Data
-df = pd.read_excel("RPD-scoring.xlsx", sheet_name="data")
+df = pd.read_csv("scoring.csv")
 
 # Load GeoJSON data
 gdf = gpd.read_file(geojson_file)
