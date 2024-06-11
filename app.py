@@ -167,7 +167,8 @@ with col5:
     else:
         score = 0
     
-    fig = px.pie(values=[score, 100 - score], names=[f'{score:.2f}%', ''], hole=0.7)
-    fig.update_traces(textposition='inside', textinfo='percent+label')
-    fig.update_layout(showlegend=False, height=500)
+    fig = px.pie(values=[score, 100 - score], names=[f'{score:.1f}%',''],
+                 hole=0.5, color_discrete_sequence=['lightgrey', 'red'])
+    #fig.update_traces(textposition='inside', textinfo='percent+label')
+    fig.update_layout(showlegend=False, hovermode=False, height=500, uniformtext_mode='hide', annotations=[dict(text=f'{score:.1f}%', x=0.5, y=0.5, font_size=40, showarrow=False)])
     st.plotly_chart(fig, use_container_width=True)
